@@ -1,0 +1,10 @@
+# Aliases - Source me or add to zshrc
+
+# Git
+alias gs="git status"
+alias gdc="git diff --cached"
+alias gd="git diff"
+
+# Bundler
+alias be="bundle exec"
+alias ber="bundle exec rake"
