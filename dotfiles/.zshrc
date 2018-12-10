@@ -102,6 +102,23 @@ source $ZSH/oh-my-zsh.sh
 alias gs="git status"
 alias gdc="git diff --cached"
 alias gd="git diff"
+alias gsl="git stash list"
+alias gsp="git stash pop"
+alias gss="git stash save"
+alias ga="git add"
+alias workgithubdir="echo https://github.com/jobseekerltd/"
+alias currentrepo="echo ${PWD##*/}"
+alias recentbranches="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname)' | sed 's/refs\/heads\///g' | grep 'mj' | head"
+alias rebasemaster='git fetch origin master:master; git merge master'
+alias currentbranch='git rev-parse --abbrev-ref HEAD'
+alias copycurrentbranch='currentbranch | pbcopy'
+alias copypullrequestlink='(echo -n "https://github.com/serviceseeking/serviceseeking/compare/master..." ; currentbranch) | pbcopy'
+alias pushthis='git push origin `currentbranch`'
+alias openpr='open `(echo -n "https://github.com/serviceseeking/serviceseeking/compare/master..." ; currentbranch)`'
+alias submitthis='pushthis; openpr'
+alias v="vim"
+alias migrate='bundle exec rake db:migrate db:test:prepare'
+
 
 alias be="bundle exec"
 alias ber="bundle exec rake"
