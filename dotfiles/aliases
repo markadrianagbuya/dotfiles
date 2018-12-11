@@ -18,6 +18,7 @@ alias deleteremotebranch="git push origin --delete"
 alias deletelocalbranch="git branch -d" # this will fail if there are commits on the branch that have not been merged to master or pushed to another branch remotely
 alias deletelocalbranchforce="git branch -D"
 alias unstage="git reset HEAD" # unstages but maintains the modifications
+alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
 
 # Bundler
 alias be="bundle exec"
