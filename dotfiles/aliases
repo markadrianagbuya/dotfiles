@@ -15,6 +15,8 @@ alias gl="git log --oneline --decorate --graph"
 alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias deleteremotebranch="git push origin --delete"
+alias deletelocalbranch="git branch -d" # this will fail if there are commits on the branch that have not been merged to master or pushed to another branch remotely
+alias deletelocalbranchforce="git branch -D"
 alias unstage="git reset HEAD" # unstages but maintains the modifications
 
 # Bundler
