@@ -1,0 +1,22 @@
+# Aliases - Source me or add to zshrc
+
+alias v="vim"
+
+# Git
+alias g="git"
+alias gs="git status"
+alias gdc="git diff --cached"
+alias gd="git diff"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcm="git commit -m"
+alias gcam="git commit -am"
+alias gl="git log --oneline --decorate --graph"
+alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
+alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
+alias deleteremotebranch="git push origin --delete"
+alias unstage="git reset HEAD" # unstages but maintains the modifications
+
+# Bundler
+alias be="bundle exec"
+alias ber="bundle exec rake"
