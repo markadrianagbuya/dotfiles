@@ -44,12 +44,17 @@ set hidden
 " Show line numbers
 set number
 
-" Set tab to 2 spaces
-set tabstop=2
-" Don't wrap
-set nowrap
-set backspace=indent,eol,start               " Delete everything with backspace
-set shiftwidth=2                             " Tabs under smart indent
+" Show trailing spaces as dots and carrots for extended lines.
+" From Janus, http://git.io/PLbAlw
+
+set list                                     " Show invisible characters
+set listchars=""                             " Reset the listchars
+set listchars+=trail:•                       " Show trailing spaces as dots
+
+set tabstop=2                                 " Set tab to 2 spaces
+set nowrap                                    " Don't wrap
+set backspace=indent,eol,start                " Delete everything with backspace
+set shiftwidth=2                              " Tabs under smart indent
 set shiftround
 set cindent
 set autoindent
@@ -60,6 +65,7 @@ set hlsearch                                 " Highlight searchg
 set incsearch                                " Show partial matches as search is entered
 set ignorecase                               " Enable case insensitive search
 set smartcase                                " Disable case insentivity if mixed case
+set statusline+=%F                           " Show filename in status bar
 
 " -----------------------------
 " Backups and undo
@@ -81,3 +87,14 @@ nnoremap <silent> <leader>r :w<CR> :TestFile<CR>
 nnoremap <silent> <leader>a :w<CR> :TestSuite<CR>
 nnoremap <silent> <leader>l :w<CR> :TestLast<CR>
 nnoremap <silent> <leader>g :w<CR> :TestVisit<CR>
+
+" Strip Trailing Whitespace
+function! StripTrailingWhitespace()
+    if !&binary && &modifiable && &filetype != 'diff'
+        let l:winview = winsaveview()
+        %s/\s\+$//e
+        let @/=''
+        call winrestview(l:winview)
+    endif
+endfunction
+nnoremap <leader>W :call StripTrailingWhitespace()<CR>
