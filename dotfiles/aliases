@@ -1,0 +1,36 @@
+# Aliases - Source me or add to zshrc
+
+alias v="vim"
+
+# Git
+alias g="git"
+alias gs="git status"
+alias gdc="git diff --cached"
+alias gd="git diff --exit-code || git diff" # This will show a git diff only if there is a diff. It will open the pager but also leave a trail in the terminal
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcm="git commit -m"
+alias gcam="git commit -am"
+alias gss="git stash save"
+alias gsp="git stash pop"
+alias gsl="git stash list"
+alias gta="git tag -a"
+alias gl="git log --oneline --decorate --graph"
+alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
+alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
+alias pushtag="git push origin"
+alias deleteremotebranch="git push origin --delete"
+alias deleteremotetag="git push origin --delete"
+alias deletelocalbranch="git branch -d" # this will fail if there are commits on the branch that have not been merged to master or pushed to another branch remotely
+alias deletelocaltag="git tag -d"
+alias deletelocalbranchforce="git branch -D"
+alias unstage="git reset HEAD" # unstages but maintains the modifications
+alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
+alias currentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n'"
+alias copycurrentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy"
+alias gitrepo="git config --get remote.origin.url | sed 's/.*://;s/\..*//'"
+alias openpr="open https://github.com/`gitrepo`/compare/`currentbranch`\?expand=1"
+
+# Bundler
+alias be="bundle exec"
+alias ber="bundle exec rake"

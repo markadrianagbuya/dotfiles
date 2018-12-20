@@ -3,5 +3,5 @@
 ## Symlink dotfiles to home directory
 
 ```
-ln -sv ~/code/dotfiles/dotfiles/.* ~
+ln -sv ~/code/dotfiles/dotfiles/pryrc ~/.pryrc
 ```

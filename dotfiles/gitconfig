@@ -1,0 +1,7 @@
+[user]
+	name = Mark Agbuya
+	email = mark.agbuya@jora.com
+
+[push]
+  # This makes it so that "git push" will create the branch on the remote repo if it hasn't already. It also makes sure to only push the current branch (instead of all branches)
+	default = current
