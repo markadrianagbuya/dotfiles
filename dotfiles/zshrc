@@ -88,40 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Aliases
-
-alias gs="git status"
-alias gdc="git diff --cached"
-alias gd="git diff"
-alias gsl="git stash list"
-alias gsp="git stash pop"
-alias gss="git stash save"
-alias ga="git add"
-alias workgithubdir="echo https://github.com/jobseekerltd/"
-alias currentrepo="echo ${PWD##*/}"
-alias recentbranches="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname)' | sed 's/refs\/heads\///g' | grep 'mj' | head"
-alias rebasemaster='git fetch origin master:master; git merge master'
-alias currentbranch='git rev-parse --abbrev-ref HEAD'
-alias copycurrentbranch='currentbranch | pbcopy'
-alias copypullrequestlink='(echo -n "https://github.com/serviceseeking/serviceseeking/compare/master..." ; currentbranch) | pbcopy'
-alias pushthis='git push origin `currentbranch`'
-alias openpr='open `(echo -n "https://github.com/serviceseeking/serviceseeking/compare/master..." ; currentbranch)`'
-alias submitthis='pushthis; openpr'
-alias v="vim"
-alias migrate='bundle exec rake db:migrate db:test:prepare'
-
-
-alias be="bundle exec"
-alias ber="bundle exec rake"
+source ~/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [  ]; then source <(kubectl completion zsh); fi
