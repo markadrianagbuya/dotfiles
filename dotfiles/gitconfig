@@ -1,7 +1,20 @@
 [user]
-	name = Mark Agbuya
-	email = mark.agbuya@jora.com
+  name = Mark Agbuya
+  email = markadrianagbuya@gmail.com
+
+[core]
+  editor = vim
+  excludesfile = /Users/markagbuya/.gitignore
 
 [push]
   # This makes it so that "git push" will create the branch on the remote repo if it hasn't already. It also makes sure to only push the current branch (instead of all branches)
-	default = current
+  default = current
+
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  s = status
+
+[includeIf "gitdir:~/code/jora/"]
+    path = ~/code/jora/.gitconfig_jora
