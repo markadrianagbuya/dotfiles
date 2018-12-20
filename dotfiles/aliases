@@ -6,7 +6,7 @@ alias v="vim"
 alias g="git"
 alias gs="git status"
 alias gdc="git diff --cached"
-alias gd="git diff"
+alias gd="git diff --exit-code || git diff" # This will show a git diff only if there is a diff. It will open the pager but also leave a trail in the terminal
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcm="git commit -m"
@@ -26,7 +26,10 @@ alias deletelocaltag="git tag -d"
 alias deletelocalbranchforce="git branch -D"
 alias unstage="git reset HEAD" # unstages but maintains the modifications
 alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
+alias currentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n'"
 alias copycurrentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy"
+alias gitrepo="git config --get remote.origin.url | sed 's/.*://;s/\..*//'"
+alias openpr="open https://github.com/`gitrepo`/compare/`currentbranch`\?expand=1"
 
 # Bundler
 alias be="bundle exec"
