@@ -1,9 +1,11 @@
 # Aliases - Source me or add to zshrc
+# For a full list of active aliases, run `alias`.
 
 alias v="vim"
 
 # Git
 alias g="git"
+alias ga="git add"
 alias gs="git status"
 alias gdc="git diff --cached"
 alias gd="git diff --exit-code || git diff" # This will show a git diff only if there is a diff. It will open the pager but also leave a trail in the terminal
@@ -27,10 +29,14 @@ alias deletelocalbranchforce="git branch -D"
 alias unstage="git reset HEAD" # unstages but maintains the modifications
 alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
 alias currentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n'"
-alias copycurrentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy"
+alias copycurrentbranch="`currentbranch` | pbcopy"
 alias gitrepo="git config --get remote.origin.url | sed 's/.*://;s/\..*//'"
 alias openpr="open https://github.com/`gitrepo`/compare/`currentbranch`\?expand=1"
+alias rebasemaster='git fetch origin master:master; git merge master'
 
 # Bundler
 alias be="bundle exec"
 alias ber="bundle exec rake"
+
+# Rails
+alias migrate='bundle exec rake db:migrate db:test:prepare'
