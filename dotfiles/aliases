@@ -2,6 +2,7 @@
 # For a full list of active aliases, run `alias`.
 
 alias v="vim"
+alias t="terraform"
 
 # Git
 alias g="git"
@@ -17,7 +18,7 @@ alias gss="git stash save"
 alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gta="git tag -a"
-alias gl="git log --oneline --decorate --graph"
+alias gl="git log --oneline --decorate --graph --all"
 alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias pushtag="git push origin"
@@ -31,7 +32,7 @@ alias undocommit="git reset --soft HEAD~" # undo commit and not affect working d
 alias currentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n'"
 alias copycurrentbranch="`currentbranch` | pbcopy"
 alias gitrepo="git config --get remote.origin.url | sed 's/.*://;s/\..*//'"
-alias openpr="open https://github.com/`gitrepo`/compare/`currentbranch`\?expand=1"
+alias openpr="open https://github.com/`gitrepo`/compare/\`currentbranch\`\?expand=1"
 alias rebasemaster='git fetch origin master:master; git merge master'
 
 # Bundler

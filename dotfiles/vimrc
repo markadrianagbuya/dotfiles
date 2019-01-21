@@ -9,9 +9,11 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
+Plug 'mhinz/vim-signify' " Show added, modified and removed lines
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-eunuch' " :Delete and :Rename
 
 call plug#end()
 
@@ -65,7 +67,10 @@ set hlsearch                                 " Highlight searchg
 set incsearch                                " Show partial matches as search is entered
 set ignorecase                               " Enable case insensitive search
 set smartcase                                " Disable case insentivity if mixed case
-set statusline+=%F                           " Show filename in status bar
+" set laststatus                               " Always show status line
+" set statusline+=%F                           " Show filename in status bar
+" set statusline+=%{FugitiveStatusline()}
+
 
 " -----------------------------
 " Backups and undo
