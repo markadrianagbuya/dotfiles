@@ -1,0 +1,2 @@
+defaults write NSGlobalDomain KeyRepeat -int 1  # Makes key repeat faster
+defaults write -g AppleKeyboardUIMode -int 2    # Allows user to control prompts using keyboard
