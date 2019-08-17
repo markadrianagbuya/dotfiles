@@ -4,3 +4,16 @@ if defined?(PryByebug)
   Pry.commands.alias_command 'n', 'next'
   Pry.commands.alias_command 'f', 'finish'
 end
+
+def pbcopy(input)
+  str = input.to_s
+  IO.popen('pbcopy', 'w') { |f| f << str }
+  puts "Copied \"#{str}\" to clipboard"
+end
+
+class String
+  def pbcopy
+    IO.popen('pbcopy', 'w') { |f| f << self }
+    puts "Copied \"#{self}\" to clipboard"
+  end
+end

@@ -5,3 +5,15 @@
 [push]
   # This makes it so that "git push" will create the branch on the remote repo if it hasn't already. It also makes sure to only push the current branch (instead of all branches)
 	default = current
+[credential]
+	helper = store --file=/buildkite-secrets/git-credentials
+[core]
+	excludesfile = /Users/markagbuya/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/markagbuya/.stCommitMsg
