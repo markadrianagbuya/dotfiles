@@ -24,11 +24,13 @@ alias gp="git push -u" # -u option ensures that the upstream branch is set (whic
 alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias pushtag="git push origin"
 alias pull="git pull"
+alias tag="git tag"
 alias deleteremotebranch="git push origin --delete"
 alias deleteremotetag="git push origin --delete"
 alias deletelocalbranch="git branch -d" # this will fail if there are commits on the branch that have not been merged to master or pushed to another branch remotely
 alias deletelocaltag="git tag -d"
 alias deletelocalbranchforce="git branch -D"
+alias removedeletedremotebranches="git remote prune"
 alias unstage="git reset HEAD" # unstages but maintains the modifications
 alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
 alias undochange="git checkout --"
@@ -41,6 +43,8 @@ alias rebasemaster='git fetch origin master:master; git merge master'
 # Bundler
 alias be="bundle exec"
 alias ber="bundle exec rake"
+
+alias test="bundle exec rspec spec"
 
 # Rails
 alias migrate='bundle exec rake db:migrate db:test:prepare'
