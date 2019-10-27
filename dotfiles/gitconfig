@@ -34,3 +34,7 @@
 [commit]
 	template = /Users/markagbuya/.stCommitMsg
 # SourceTree settings END
+[credential]
+	helper = osxkeychain
+[url "git@github.com:jobseekerltd/"]
+	insteadOf = https://github.com/jobseekerltd/
