@@ -23,22 +23,25 @@ alias gl="git log --oneline --decorate --graph --all"
 alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
 alias pushtag="git push origin"
-alias pull="git pull"
+alias pull="git pull --rebase" # default is merge commit. I prefer rebase
 alias tag="git tag"
+alias deletelocaltag="git tag -d"
 alias deleteremotebranch="git push origin --delete"
 alias deleteremotetag="git push origin --delete"
 alias deletelocalbranch="git branch -d" # this will fail if there are commits on the branch that have not been merged to master or pushed to another branch remotely
 alias deletelocaltag="git tag -d"
 alias deletelocalbranchforce="git branch -D"
 alias removedeletedremotebranches="git remote prune"
+alias rebasemaster="git pull --rebase origin master" # can be used on a branch to rebase onto origin/master.
 alias unstage="git reset HEAD" # unstages but maintains the modifications
 alias undocommit="git reset --soft HEAD~" # undo commit and not affect working directory (committed files will be staged)
 alias undochange="git checkout --"
 alias currentbranch="git rev-parse --abbrev-ref HEAD | tr -d '\n'"
-alias copycurrentbranch="\`currentbranch\` | pbcopy"
-alias gitrepo="git config --get remote.origin.url | sed 's/.*://;s/\..*//'"
+alias copycurrentbranch="echo \`currentbranch\` | pbcopy"
+alias gitrepo="git config --get remote.origin.url | sed 's/.*github.com.//;s/\..*//'"
 alias openpr="open https://github.com/\`gitrepo\`/compare/\`currentbranch\`\?expand=1"
-alias rebasemaster='git fetch origin master:master; git merge master'
+alias recoverfile='git checkout master' # gets the file from master. Needs to be modified if file deleted in master
+alias restorefile='git checkout master' # gets the file from master. Needs to be modified if file deleted in master
 
 # Bundler
 alias be="bundle exec"
@@ -48,3 +51,15 @@ alias test="bundle exec rspec spec"
 
 # Rails
 alias migrate='bundle exec rake db:migrate db:test:prepare'
+alias server='bundle exec rails server'
+alias console='bundle exec rails console'
+alias seed='bundle exec rake db:seed'
+
+# Navigation
+alias jobengine='cd ~/code/jobengine'
+alias localhost='cd ~/code/localhost'
+
+# Misc
+alias generatesalt='LC_CTYPE=C tr -dc "A-Za-z0-9" < /dev/urandom| head -c 10'
+alias bbundle='bundle'
+
