@@ -15,3 +15,24 @@ fi
 # Tmuxinator Completion
 # This file needs to be downloaded from the repo: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
 source ~/.bin/tmuxinator.zsh
+
+# # Activate zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# # Provide access to rbenv command line utility
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# # Automatically init rbenv on startup
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/markagbuya/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/markagbuya/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/markagbuya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markagbuya/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
