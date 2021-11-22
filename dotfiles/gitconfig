@@ -1,7 +1,6 @@
 [user]
   name = Mark Agbuya
   email = markadrianagbuya@gmail.com
-	signingkey = DDA532DA237A2DCE
 
 [core]
   editor = vim
@@ -35,7 +34,6 @@
 	trustExitCode = true
 [commit]
 	template = /Users/markagbuya/.stCommitMsg
-	gpgsign = true
 # SourceTree settings END
 [credential]
 	helper = osxkeychain
