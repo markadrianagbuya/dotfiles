@@ -16,14 +16,15 @@
   ci = commit
   st = status
   s = status
+  rb = rebase
 
 # used to work on jora stuff on personal computer
 [includeIf "gitdir:~/code/jora/"]
   path = ~/.gitconfig_jora
 
 [include]
-  # will load if file exists (Excluded from dotfiles). Used to set work profile
-  path = ~/.git_local_cfg_overrides
+  # will load if file exists. Used to set work profile
+  path = ~/.gitconfig_jora
 
 # SourceTree settings START
 [difftool "sourcetree"]

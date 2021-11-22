@@ -56,10 +56,13 @@ alias console='bundle exec rails console'
 alias seed='bundle exec rake db:seed'
 
 # Navigation
-alias jobengine='cd ~/code/jobengine'
+alias jobengine='cd ~/code/jora-candix-jobengine'
 alias localhost='cd ~/code/localhost'
 
 # Misc
 alias generatesalt='LC_CTYPE=C tr -dc "A-Za-z0-9" < /dev/urandom| head -c 10'
 alias bbundle='bundle'
+alias code.='code .'
+alias c='code'
+
 
