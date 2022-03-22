@@ -40,3 +40,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # So that bundle open uses VSCode
 export BUNDLE_EDITOR="code"
 export EDITOR="code"
+
+# For the ZSH prompt https://spaceship-prompt.sh/getting-started/
+export ZSH_THEME="spaceship"
