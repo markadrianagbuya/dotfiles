@@ -1,7 +1,6 @@
 [user]
-	name = Mark Agbuya
+	name = Mark Adrian Agbuya-Cheok
 	email = markadrianagbuya@gmail.com
-	signingkey = 290CB928BA52E470
 
 [core]
   editor = vim
@@ -29,7 +28,7 @@
 # SourceTree settings START
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -37,10 +36,11 @@
 	template = /Users/markagbuya/.stCommitMsg
   gpgsign = true
 # SourceTree settings END
+
 [credential]
 	helper = osxkeychain
 [gpg]
-	program = gpg2
+	# program = gpg2
 # Ensures that merge conflict resolutions only happen once
 [rerere]
 	enabled = true
