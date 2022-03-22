@@ -19,9 +19,9 @@ alias gss="git stash save"
 alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gta="git tag -a"
-alias gl="git log --oneline --decorate --graph --all"
-alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
-alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args) 
+alias gl="git log --oneline --decorate --graph"
+alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args)
+alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args)
 alias pushtag="git push origin"
 alias pull="git pull --rebase" # default is merge commit. I prefer rebase
 alias tag="git tag"
@@ -42,6 +42,10 @@ alias gitrepo="git config --get remote.origin.url | sed 's/.*github.com.//;s/\..
 alias openpr="open https://github.com/\`gitrepo\`/compare/\`currentbranch\`\?expand=1"
 alias recoverfile='git checkout master' # gets the file from master. Needs to be modified if file deleted in master
 alias restorefile='git checkout master' # gets the file from master. Needs to be modified if file deleted in master
+alias branchfrommaster='gco master; pull; gcob'
+alias bfm='branchfrommaster'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
 
 # Bundler
 alias be="bundle exec"
@@ -64,5 +68,12 @@ alias generatesalt='LC_CTYPE=C tr -dc "A-Za-z0-9" < /dev/urandom| head -c 10'
 alias bbundle='bundle'
 alias code.='code .'
 alias c='code'
+alias editaliases='code $ZSH_CUSTOM/aliases.zsh'
 
+# Functions
 
+## Gets a file from another branch. Used like `restorefilefrombranch branch_name file_path`
+## E.g. restorefilefrombranch CANDIX-1165-refactor-email-alert-specs spec/integration/email_alert/serp_email_alert_form_spec.rb
+restorefilefrombranch() {
+  git checkout "$1" -- "$2"
+}

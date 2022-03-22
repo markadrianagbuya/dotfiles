@@ -22,11 +22,12 @@ ln -sv ~/personal_code/dotfiles/dotfiles/gitconfig_jora ~/.gitconfig_jora
 
 Add custom zsh files (relies on oh-my-zsh)
 ```
+ln -sv ~/personal_code/dotfiles/zsh_custom_files/* $ZSH_CUSTOM
 cp -a zsh_custom_files/. $ZSH_CUSTOM
 ```
 
 
 Download tmuxinator settings
 ```
-curl -o ~/.bin/tmuxinator.zsh --create-dirs https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh 
+curl -o ~/.bin/tmuxinator.zsh --create-dirs https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
 ```

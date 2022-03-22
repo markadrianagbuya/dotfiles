@@ -36,3 +36,7 @@ if [ -f '/Users/markagbuya/google-cloud-sdk/completion.zsh.inc' ]; then . '/User
 export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# So that bundle open uses VSCode
+export BUNDLE_EDITOR="code"
+export EDITOR="code"

@@ -1,10 +1,11 @@
 [user]
-  name = Mark Agbuya
-  email = markadrianagbuya@gmail.com
+	name = Mark Agbuya
+	email = markadrianagbuya@gmail.com
+	signingkey = 290CB928BA52E470
 
 [core]
   editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/mark.agbuya/.gitignore_global
 
 [push]
   # This makes it so that "git push" will create the branch on the remote repo if it hasn't already. It also makes sure to only push the current branch (instead of all branches)
@@ -34,8 +35,12 @@
 	trustExitCode = true
 [commit]
 	template = /Users/markagbuya/.stCommitMsg
+  gpgsign = true
 # SourceTree settings END
 [credential]
 	helper = osxkeychain
-[url "git@github.com:jobseekerltd/"]
-	insteadOf = https://github.com/jobseekerltd/
+[gpg]
+	program = gpg2
+# Ensures that merge conflict resolutions only happen once
+[rerere]
+	enabled = true
