@@ -43,3 +43,6 @@ export EDITOR="code"
 
 # For the ZSH prompt https://spaceship-prompt.sh/getting-started/
 export ZSH_THEME="spaceship"
+
+# This is to prevent `error: gpg failed to sign the data`
+export GPG_TTY=$(tty)
