@@ -40,7 +40,10 @@
 [credential]
 	helper = osxkeychain
 [gpg]
-	# program = gpg2
+	program = gpg2
+
 # Ensures that merge conflict resolutions only happen once
 [rerere]
 	enabled = true
+[init]
+	defaultBranch = main

@@ -12,7 +12,9 @@ Sim-link all the dotfiles. Run the following from this directory
 ln -sv ~/personal_code/dotfiles/dotfiles/pryrc ~/.pryrc
 ln -sv ~/personal_code/dotfiles/dotfiles/gitconfig ~/.gitconfig
 ln -sv ~/personal_code/dotfiles/dotfiles/vimrc ~/.vimrc
+ln -sv ~/personal_code/dotfiles/dotfiles/ideavimrc ~/.ideavimrc
 ln -sv ~/personal_code/dotfiles/dotfiles/tmux.conf ~/.tmux.conf
+ln -sv ~/personal_code/dotfiles/dotfiles/gitignore_global ~/.gitignore_global
 ```
 
 Note: You may already have a ~/.gitconfig. If so, adjust file accordingly so that this repo's gitconfig can be symlinked.
