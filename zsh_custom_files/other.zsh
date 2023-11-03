@@ -46,3 +46,6 @@ export ZSH_THEME="spaceship"
 
 # This is to prevent `error: gpg failed to sign the data`
 export GPG_TTY=$(tty)
+
+# This changes to use vim mode in the terminal
+bindkey -v

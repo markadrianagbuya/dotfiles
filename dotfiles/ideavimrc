@@ -1,1 +1,23 @@
 set clipboard=unnamed
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" shows the leader key being pressed
+set showcmd
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
+" go to the end of the selection in visual mode after yanking
+vmap y ygv<Esc>
+
+call plug#begin()
+
+Plug 'vim-matchit'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+set matchit

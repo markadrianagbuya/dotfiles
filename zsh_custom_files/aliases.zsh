@@ -20,7 +20,10 @@ alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gta="git tag -a"
 alias gl="git log --oneline --decorate --graph"
+alias gl2="git log --abbrev-commit --pretty=format:'%C(yellow)%h  %Cred%ad  %Cblue%<(20)%an  %Cgreen%d %Creset%s' --date=short"
 alias gp="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args)
+alias grhh="git reset --hard HEAD"
+alias merge="git merge"
 alias push="git push -u" # -u option ensures that the upstream branch is set (which allows git to show relationship of branch using `git status` and allows us to call `git pull` without args)
 alias pushtag="git push origin"
 alias pull="git pull --rebase" # default is merge commit. I prefer rebase
@@ -45,6 +48,7 @@ alias restorefile='git checkout master' # gets the file from master. Needs to be
 alias branchfrommaster='gco master; pull; gcob'
 alias bfm='branchfrommaster'
 alias gra='git rebase --abort'
+alias master='git checkout master'
 alias grc='git rebase --continue'
 
 # Bundler
@@ -62,6 +66,7 @@ alias seed='bundle exec rake db:seed'
 # Navigation
 alias jobengine='cd ~/code/jora-candix-jobengine'
 alias localhost='cd ~/code/localhost'
+alias dotfiles='cd ~/personal_code/dotfiles'
 
 # Misc
 alias generatesalt='LC_CTYPE=C tr -dc "A-Za-z0-9" < /dev/urandom| head -c 10'
@@ -69,6 +74,13 @@ alias bbundle='bundle'
 alias code.='code .'
 alias c='code'
 alias editaliases='code $ZSH_CUSTOM/aliases.zsh'
+alias refreshaliases='source $ZSH_CUSTOM/aliases.zsh'
+alias applyaliases='source $ZSH_CUSTOM/aliases.zsh'
+alias updatealiases='source $ZSH_CUSTOM/aliases.zsh'
+
+# Jora
+alias joraserver='forego start -p 3000'
+alias openbuildkite="open https://buildkite.com/seek/jora-candix-jobengine/builds\?branch=\`currentbranch\`"
 
 # Functions
 
